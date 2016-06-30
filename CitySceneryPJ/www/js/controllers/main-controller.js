@@ -668,7 +668,10 @@ angular.module('app.main-controller', [])
 			if(markerListExist[type.index]!=1){
 				var item = $scope.itemList[type.index][i];
 				point = new BMap.Point(item.x, item.y);
-				markerList[type.index][i] = new BMap.Marker(point);
+        var tttttemp = parseInt(type.index)+1;
+        var icons = "./img/icon"+tttttemp+".png";
+        var myicon = new BMap.Icon(icons, new BMap.Size(12, 16));
+        markerList[type.index][i] = new BMap.Marker(point, {icon: myicon});
 				$scope.map.addOverlay(markerList[type.index][i]);
 				$scope.addClickHandler(type.index,i,markerList[type.index][i]);
 
@@ -862,10 +865,10 @@ angular.module('app.main-controller', [])
               $scope.selectItem.collection++;
               break;
         case 1: op = '足迹';
-          $scope.track.collection++;
+          $scope.selectItem.track++;
               break;
         default:
-          $scope.wishlist.collection++;
+          $scope.selectItem.wishlist++;
               op = '心愿单';
       }
       var alertPopup = $ionicPopup.alert({
