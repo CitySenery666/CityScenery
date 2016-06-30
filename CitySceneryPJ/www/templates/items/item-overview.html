@@ -1,0 +1,188 @@
+<div>
+  <div class="list-frame" id="item-overview">
+    <ion-header-bar class="bar-positive">
+      <button class="button button-clear pull-left" ng-click="itemExpand()">{{expandOrNot}}</button>
+      <h1 class="title">{{selectItem.text}}</h1>
+      <button class="button button-clear pull-right" ng-click="itemReturn()">后退</button>
+    </ion-header-bar>
+    <ion-scroll class="card-list" direction="y">
+      <div>
+        <div class="row">
+          <div class="col col-67">
+            评分
+            <div class="rank">
+              <div class="row">
+                <div class="col col-50">
+                  <div>
+                    <div class="red-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="red-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="red-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="red-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="red-star"><i class="icon rank-star ion-ios-star"></i></div>
+                  </div>
+                </div>
+                <div class="col col-50">
+                  <div class="percentage" ng-style="myObj5">
+
+
+                  </div>
+                  <div class="percentage-num">{{selectItem.s5}}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-50">
+                  <div>
+                    <div class="grey-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="red-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="red-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="red-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="red-star"><i class="icon rank-star ion-ios-star"></i></div>
+                  </div>
+
+                </div>
+                <div class="col col-50">
+                  <div class="percentage" ng-style="myObj4">
+
+
+                  </div>
+                  <div class="percentage-num">{{selectItem.s4}}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-50">
+                  <div>
+                    <div class="grey-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="grey-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="red-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="red-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="red-star"><i class="icon rank-star ion-ios-star"></i></div>
+                  </div>
+
+                </div>
+                <div class="col col-50">
+                  <div class="percentage" ng-style="myObj3">
+
+
+                  </div>
+                  <div class="percentage-num">{{selectItem.s3}}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-50">
+                  <div>
+                    <div class="grey-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="grey-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="grey-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="red-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="red-star"><i class="icon rank-star ion-ios-star"></i></div>
+                  </div>
+
+                </div>
+                <div class="col col-50">
+                  <div class="percentage" ng-style="myObj2">
+
+
+                  </div>
+                  <div class="percentage-num">{{selectItem.s2}}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-50">
+                  <div>
+                    <div class="grey-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="grey-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="grey-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="grey-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="red-star"><i class="icon rank-star ion-ios-star"></i></div>
+                  </div>
+
+                </div>
+                <div class="col col-50">
+                  <div class="percentage" ng-style="myObj1">
+
+
+                  </div>
+                  <div class="percentage-num">{{selectItem.s1}}</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-50">
+                  <div>
+                    <div class="grey-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="grey-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="grey-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="grey-star"><i class="icon rank-star ion-ios-star"></i></div>
+                    <div class="grey-star"><i class="icon rank-star ion-ios-star"></i></div>
+                  </div>
+
+                </div>
+                <div class="col col-50">
+                  <div class="percentage" ng-style="myObj0">
+
+
+                  </div>
+                  <div class="percentage-num">{{selectItem.s0}}</div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="col col-33">
+            <div>
+              <h1>得分: {{selectItem.score| number:1}}</h1>
+              <button class="button button-small button-outline button-positive" ng-disabled="!user" ng-click="addOperation(0)">
+                <i class="icon ion-ios-star"></i>收藏
+              </button>
+              <button class="button button-small button-outline button-positive" ng-disabled="!user">
+                <i class="icon ion-share"></i>分享
+              </button>
+              <button class="button button-small button-outline button-positive" ng-disabled="!user" ng-click="addOperation(1)">
+                <i class="icon ion-ios-paw"></i>加入足迹
+              </button>
+              <button class="button button-small button-outline button-positive" ng-disabled="!user" ng-click="addOperation(2)">
+                <i class="icon ion-heart"></i>加入心愿单
+                </button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">基本信息
+            <ion-scroll class="overview-component" direction="y">
+              {{selectItem.brief}}
+            </ion-scroll>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="comment-item" ng-repeat="comment in commentList">
+              <div class="cmt-left-frame">
+                <img class="avatar-icon" src="{{getUserSrc(comment.user.userPortrait)}}"/>
+              </div>
+              <div class="cmt-right-frame">
+                <div class="cmt-name-and-time">
+                  <strong class="cmt-username">{{comment.user.userName}}</strong>
+                  <p class="cmt-time">{{transformDate(comment.commentTime)}}</p>
+                </div>
+                <h4>评分:{{comment.commentScore}}</h4>
+                <p>{{comment.commentContent}}</p>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-scroll>
+
+
+  </div>
+  <div class="button-bar bar-positive slide-bar">
+    <a class="button" ng-click="openDetail()">详细资料</a>
+    <a class="button" ng-click="openJudgement({{selectItem}})" ng-disabled="!user">评价</a>
+    <a class="button" ng-click="goHere('{{selectItem.text}}')">到这去</a>
+    <a class="button" ng-click="showQuestionaire()">调查问卷</a>
+    <a class="button" ng-click="openComment()" ng-disabled="!user"><i class="icon ion-plus-circled"></i></a>
+  </div>
+</div>

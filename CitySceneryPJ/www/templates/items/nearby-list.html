@@ -1,0 +1,24 @@
+<div>
+<div class="list-frame" id="nearby-item-list">
+	<ion-header-bar class="bar-positive">
+        <h1 class="title">附近</h1>
+        <button class="button button-clear pull-right" ng-click="closeItemList()">关闭</button>
+    </ion-header-bar>
+    <ion-scroll class="card-list" direction="y">
+        <div>
+            <div class="card" ng-repeat="item in orderedNearbyList">
+              	<div class="item item-text-wrap" ng-click="showItem(item)">
+                		{{item.text}}
+              	</div>
+            </div>
+        </div>
+    </ion-scroll>
+</div>
+<div class="button-bar bar-positive slide-bar">
+    <a class="button" id="score-button" ng-click="getOrderedNearbyList(1)">评分</a>
+    <a class="button" id="collection-button" ng-click="getOrderedNearbyList(2)">收藏</a>
+    <a class="button" id="track-button" ng-click="getOrderedNearbyList(3)">足迹</a>
+    <a class="button" id="wishlist-button" ng-click="getOrderedNearbyList(4)">心愿</a>
+    <a class="button" id="rec-button" ng-click="getOrderedNearbyList(5)">推荐</a>
+  </div>
+</div>

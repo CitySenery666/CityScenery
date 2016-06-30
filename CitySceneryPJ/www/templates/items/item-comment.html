@@ -1,0 +1,48 @@
+<div>
+	<div class="list-frame" id="item-comment">
+		<ion-header-bar class="bar-positive">
+        	<h1 class="title">{{selectItem.text}}</h1>
+        	<button class="button button-clear pull-right" ng-click="commentReturn()">后退</button>
+    	</ion-header-bar>
+    <ion-scroll direction="y" style="height: 100%;">
+    	<div class="comment-frame">
+    		<div class="give-score">
+    			评价:
+    			<button id="score1" class="button button-small button-stable" ng-mouseenter="hoverScore(1)" ng-mouseleave="leaveScore()" ng-click="setScore(1)">
+    				<i class="icon ion-ios-star"></i>
+				</button>
+				<button id="score2" class="button button-small button-stable" ng-mouseenter="hoverScore(2)" ng-mouseleave="leaveScore()" ng-click="setScore(2)">
+    				<i class="icon ion-ios-star"></i>
+				</button>
+				<button id="score3" class="button button-small button-stable" ng-mouseenter="hoverScore(3)" ng-mouseleave="leaveScore()" ng-click="setScore(3)">
+    				<i class="icon ion-ios-star"></i>
+				</button>
+				<button id="score4" class="button button-small button-stable" ng-mouseenter="hoverScore(4)" ng-mouseleave="leaveScore()" ng-click="setScore(4)">
+    				<i class="icon ion-ios-star"></i>
+				</button>
+				<button id="score5" class="button button-small button-stable" ng-mouseenter="hoverScore(5)" ng-mouseleave="leaveScore()" ng-click="setScore(5)">
+    				<i class="icon ion-ios-star"></i>
+				</button>
+    		</div>
+    		<label class="item item-input">
+				<textarea placeholder="请留下您的评论" id="commentContent"></textarea>
+			  </label>
+        <div id="preview">
+
+        </div>
+			  <div class="select-file">
+				  <i class="icon select-file-icon ion-plus-circled" ng-click="addCommentPicture()"></i>
+            <form id="uploadForm" method="post" enctype="multipart/form-data">
+              <input style="display:none" name="userId" value="{{user.userId}}" />
+              <input style="display:none" name="sceneryId" value="{{selectItem.id}}" />
+              <input style="display: none" id="fileImage" type="file" size="30" name="media"/>
+            </form>
+			  </div>
+			<div class="submit-button">
+				<button class="button button-positive" ng-click="addComment()" ng-disabled="!cmtScore">提交</button>
+			</div>
+    	</div>
+      </ion-scroll>
+	</div>
+</div>
+

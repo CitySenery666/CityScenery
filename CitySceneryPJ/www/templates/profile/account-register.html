@@ -1,0 +1,51 @@
+<div>
+  <div class="list-frame" id="account-login">
+    <ion-header-bar class="bar-positive">
+      <h1 class="title">欢迎</h1>
+      <button class="button button-clear pull-right" ng-click="closeItemList()">关闭</button>
+    </ion-header-bar>
+    <div class="login-frame-center">
+
+      <div class="login-frame-2">
+        <form name="myForm" novalidate>
+
+          <div class="list login-info">
+            <label class="item item-input">
+              <span class="input-label">邮箱：</span>
+              <input type="email" name="email" ng-model="email" required />
+            </label>
+            <label class="item item-input">
+              <span class="input-label">用户名：</span>
+              <input type="text" name="username" ng-model="username" required />
+            </label>
+            <label class="item item-input">
+              <span class="input-label">密码：</span>
+              <input type="password" name="password" ng-model="password" required />
+            </label>
+            <label class="item item-input">
+              <span class="input-label">确认密码：</span>
+              <input type="password" name="passwordrepeat" ng-model="passwordrepeat" required />
+            </label>
+          </div>
+          <div class="error-show" style="color:red" ng-show="myForm.$dirty">
+            <span ng-show="myForm.email.$error.required && myForm.email.$dirty">邮箱是必须的。</span>
+            <span ng-show="myForm.email.$error.email && myForm.email.$dirty">邮箱格式不正确。</span>
+            <span ng-show="!myForm.email.$error.email && myForm.username.$error.required &&!myForm.email.$error.required && myForm.username.$dirty">用户名是必须的。</span>
+            <span ng-show="!myForm.email.$error.email && myForm.password.$error.required &&!myForm.username.$error.required &&!myForm.email.$error.required && myForm.password.$dirty">密码是必须的。</span>
+            <span ng-show="!myForm.email.$error.email && myForm.passwordrepeat.$error.required &&!myForm.password.$error.required &&!myForm.username.$error.required &&!myForm.email.$error.required && myForm.passwordrepeat.$dirty">重复密码是必须的。</span>
+            <span ng-show="!myForm.email.$error.email && password!=passwordrepeat &&!myForm.passwordrepeat.$error.required &&!myForm.password.$error.required &&!myForm.username.$error.required &&!myForm.email.$error.required">两次密码不一致。</span>
+          </div>
+          <div class="padding login-button">
+            <button class="button button-block button-positive" ng-disabled="myForm.email.$error.required||myForm.email.$error.email||myForm.username.$error.required||myForm.password.$error.required||myForm.passwordrepeat.$error.required||password!=passwordrepeat" ng-click="userRegister()">注册</button>
+          </div>
+        </form>
+        <div class="switch-frame">
+          已有账号？
+          <button class="button button-clear button-positive button-register" ng-click="switchLog()">返回登录</button>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

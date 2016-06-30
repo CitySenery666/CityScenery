@@ -1,0 +1,47 @@
+<div>
+  <div class="list-frame" id="history-item-list">
+    <ion-header-bar class="bar-positive">
+      <h1 class="title">让我安静的做一个主页</h1>
+      <button class="button button-clear pull-right" ng-click="exitAccount()">退出</button>
+    </ion-header-bar>
+    <ion-scroll class="card-list" direction="y">
+      <div>
+        <div>
+        </div>
+        <div class="avatar-frame">
+          <img class="avatar" id="userUrl" src="{{getUserSrc(user.userPortrait)}}" ng-click="show()"/>
+          <h4>{{user.userName}}</h4>
+          <form  style="display:none" enctype="multipart/form-data" id="iconForm" name="uploadForm">
+            <input style="display:none" name="userId" value="{{user.userId}}" />
+            <input name="picture" id="picture" type="file" />
+          </form>
+        </div>
+        <div class="collection">
+          <h3>我的收藏</h3>
+          <div ng-repeat="collection in collectionList">
+            <div class="account-item item item-text-wrap">
+              {{collection.scenery.name}}<button class="button-delete button button-small button-assertive" ng-click="deleteOperation(collection.scenery.id, 0)">删除</button>
+            </div>
+          </div>
+        </div>
+        <div class="track">
+          <h3>我的足迹</h3>
+          <div ng-repeat="track in trackList">
+            <div class="account-item item item-text-wrap">
+              {{track.scenery.name}}<button class="button-delete button button-small button-assertive" ng-click="deleteOperation(track.scenery.id, 1)">删除</button>
+            </div>
+          </div>
+        </div>
+        <div class="wishlist">
+          <h3>我的心愿</h3>
+          <div ng-repeat="wish in wishList">
+            <div class="account-item item item-text-wrap">
+              {{wish.scenery.name}}<button class="button-delete button button-small button-assertive" ng-click="deleteOperation(wish.scenery.id, 2)">删除</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-scroll>
+  </div>
+</div>
+

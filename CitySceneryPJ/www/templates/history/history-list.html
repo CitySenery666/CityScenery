@@ -1,0 +1,26 @@
+<div>
+<div class="list-frame" id="history-item-list">
+	<ion-header-bar class="bar-positive">
+        <h1 class="title">搜索的黑历史</h1>
+        <button class="button button-clear pull-right" ng-click="closeItemList()">关闭</button>
+    </ion-header-bar>
+    <ion-scroll class="card-list" direction="y">
+
+          <div ng-repeat="history in historyOrderedList">
+            <div class="card">
+              	<div style="text-align: center;" class="item item-text-wrap" ng-click="showItem(history)">
+                  {{history.text}}
+              	</div>
+            </div>
+          </div>
+
+    </ion-scroll>
+</div>
+  <div class="button-bar bar-positive slide-bar">
+    <a class="button" id="score-button" ng-click="getHistoryList(1)">评分</a>
+    <a class="button" id="collection-button" ng-click="getHistoryList(2)">收藏</a>
+    <a class="button" id="track-button" ng-click="getHistoryList(3)">足迹</a>
+    <a class="button" id="wishlist-button" ng-click="getHistoryList(4)">心愿</a>
+    <a class="button" id="rec-button" ng-click="getHistoryList(5)">推荐</a>
+  </div>
+</div>
